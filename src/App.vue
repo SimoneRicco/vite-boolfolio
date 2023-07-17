@@ -11,7 +11,7 @@ export default {
 <template>
   <div class="container">
     <h1>Benvenuto!</h1>
-    <ProjectList></ProjectList>
+    <router-view></router-view>
   </div>
 </template>
 
