@@ -29,6 +29,11 @@ export default {
           {{ technology.name }}
         </li>
       </ul>
+      <router-link
+        :to="{ name: 'projects.show', params: { slug: project.slug } }"
+        class="btn btn-primary mt-auto"
+        >View</router-link
+      >
     </div>
   </div>
 </template>
