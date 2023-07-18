@@ -10,7 +10,7 @@ export default {
 
 <template>
   <div class="container">
-    <h1>Benvenuto!</h1>
+    <!-- <h1>Benvenuto!</h1> -->
     <router-view></router-view>
   </div>
 </template>

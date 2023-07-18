@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <h2>Lista dei post</h2>
+  <!-- <h2>Lista dei post</h2> -->
   <ProjectList />
 </template>
 
