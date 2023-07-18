@@ -21,26 +21,20 @@ export default {
     axios
       .get(this.store.baseUrl + "api/projects/" + this.$route.params.slug)
       .then((response) => {
-        if (response.data.success) {
-          this.project = response.data.results;
-          console.log(this.project.title);
-        } else {
-          // this.$router.push({ name: 'page404' });
-          this.is404 = true;
-          console.log("Ciao");
-        }
-      });
+        this.project = response.data.results;
+      })
+      .catch(() => (this.is404 = true));
   },
 };
 </script>
 
 <template>
-  <!-- <App404 v-if="is404" /> -->
-  <template>
+  <App404 v-if="is404" />
+  <template v-else-if="project">
     <h1>{{ project.title }}</h1>
-    <!-- <h2>Last modified: {{ this.luxon.now().toFormat("dd/MM/yyyy") }}</h2>
+    <h2>Last modified: {{ this.luxon.now().toFormat("dd/MM/yyyy") }}</h2>
     <img :src="this.store.getImageUrl(project.image)" :alt="project.title" />
-    <p>{{ project.content }}</p> -->
+    <p>{{ project.content }}</p>
   </template>
 </template>
 

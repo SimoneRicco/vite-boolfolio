@@ -2,12 +2,10 @@
 import axios from "axios";
 import ProjectCard from "./ProjectCard.vue";
 import { store } from "../store";
-import AppNav from "./AppNav.vue";
 
 export default {
   components: {
     ProjectCard,
-    AppNav,
   },
   data() {
     return {
@@ -29,6 +27,7 @@ export default {
         .get(store.baseUrl + "api/projects", {
           params: {
             page: this.currentPage,
+            q: new URLSearchParams(window.location.search).get("q"),
           },
         })
         .then((response) => {
